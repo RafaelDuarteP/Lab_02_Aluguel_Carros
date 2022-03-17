@@ -4,7 +4,7 @@ Como usuário eu quero abrir novos pedidos de aluguel para conseguir alugar um c
 
 Como usuário eu quero alterar pedidos de aluguel para atualizar os dados de cada pedido;
 
-Como usuário eu quero consultar pedidos de aluguel para ver quais são mesu pedidos feitos;
+Como usuário eu quero consultar pedidos de aluguel para ver quais são meus pedidos feitos;
 
 Como usuário eu quero cancelar pedidos de aluguel para desistir de alugar um carro;
 
