@@ -1,11 +1,13 @@
 package com.example.demo.model.users;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Entity
 public class Agente extends Usuario {
+	@Column(unique = true)
 	private String cnpj;
 	@Enumerated(EnumType.STRING)
 	private TipoAgente tipoAgente;
