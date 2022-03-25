@@ -71,4 +71,10 @@ public abstract class Usuario {
 		this.endereco = endereco;
 	}
 
+	@Override
+	public String toString() {
+		return "Usuario [id=" + this.id + ", email=" + this.email + ", senha=" + this.senha + ", nome=" + this.nome
+				+ ", endereco=" + this.endereco + "]";
+	}
+
 }
