@@ -1,0 +1,68 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Lista de usuarios </title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="col-12 text-center">Lista de professores</h1>
+        </div>
+
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">tipo</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="u: ${users}">
+                        <th class="col-1" scope="row" th:text="${u.id}">id</th>
+                        <td class="col-3" th:text="${u.nome}">nome</td>
+                        <td class="col-3" th:text="${u.email}">email</td>
+                        <td class="col-2" th:text="${u.getClass().getSimpleName()}">tipo</td>
+                        <td class="col-1"><a th:href="@{/{tipo}/{id}(tipo = ${u.getClass().getSimpleName().toLowerCase()},id = ${u.id})}">Detalhes</a></td>
+                        <td class="col-1"><a th:href="@{/{tipo}/{id}/edit(tipo = ${u.getClass().getSimpleName().toLowerCase()},id = ${u.id})}">Editar</a></td>
+                        <td class="col-1"><a th:href="@{/usuario/{id}/delete(id = ${u.id})}">Deletar</a></td>
+
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+   
+   		<div class="row">
+   			<a href="/usuario/new" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Novo usuário</a>
+   		</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
