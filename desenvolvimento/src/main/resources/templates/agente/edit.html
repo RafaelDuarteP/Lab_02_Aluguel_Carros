@@ -1,0 +1,95 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    
+
+    <title>Editar Usuario</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="col-12 text-center">Formulario de edição usuario</h1>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <form  th:action="@{/agente/{id}(id=${c.id})}" method="post">
+                    <!-- Dados de usuario -->
+                    <div class="row ">
+                        <h3 class="col-12 text-center">Dados de usuário</h3>
+                        <div class="mb-3 col-6">
+                            <label class="form-label">Nome</label>
+                            <input th:value="${c.nome}" class="form-control" type="text" name="nome">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label class="form-label">Email</label>
+                            <input th:value="${c.email}" class="form-control" type="email" name="email">
+                        </div>
+                        <div class="mb-3 col-4">
+                            <label class="form-label">Senha</label>
+                            <input th:value="${c.senha}" class="form-control" type="password" name="senha">
+                        </div>
+                    </div>
+                    <!-- Dados de endereço -->
+                    <div class="row ">
+                        <h3 class="col-12 text-center">Endereço</h3>
+                        <div class="mb-3 col-5">
+                            <label class="form-label">Rua</label>
+                            <input th:value="${c.endereco.rua}" class="form-control" type="text" name="rua">
+                        </div>
+                        <div class="mb-3 col-5">
+                            <label class="form-label">Bairro</label>
+                            <input th:value="${c.endereco.bairro}" class="form-control" type="text" name="bairro">
+                        </div>
+                        <div class="mb-3 col-2">
+                            <label class="form-label">Numero</label>
+                            <input th:value="${c.endereco.numero}" class="form-control" type="number" name="numero">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label class="form-label">Cidade</label>
+                            <input th:value="${c.endereco.cidade}" class="form-control" type="text" name="cidade">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label class="form-label">Estado</label>
+                            <input th:value="${c.endereco.estado}" class="form-control" type="text" name="estado">
+                        </div>
+                    </div>
+                    <!-- Dados de agente -->
+                    <div class="row" id="agente">
+                        <h3 class="col-12 text-center">Dados jurídicos</h3>
+                        <div class="mb-3 col-6">
+                            <label class="form-label">CNPJ</label>
+                            <input th:value="${c.cnpj}" class="form-control" type="text" name="cnpj">
+                        </div>
+                        
+                    
+                    
+                    </div>
+					<button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    </body>
+
+</html>
