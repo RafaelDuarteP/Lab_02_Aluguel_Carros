@@ -54,5 +54,23 @@ public class Cliente extends Usuario {
 	public void setProfissao(List<Profissao> profissao) {
 		this.profissao = profissao;
 	}
+	
+	public Profissao primeiraProfissao() {
+		return profissao.get(0);
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [rg=" + this.rg + ", cpf=" + this.cpf + "]";
+	}
+
+	public void update(Cliente cliente) {
+		this.cpf = cliente.cpf;
+		this.rg = cliente.rg;
+		this.setNome(cliente.getNome());
+		this.setEmail(cliente.getEmail());
+		this.setSenha(cliente.getSenha());
+		
+	}
 
 }

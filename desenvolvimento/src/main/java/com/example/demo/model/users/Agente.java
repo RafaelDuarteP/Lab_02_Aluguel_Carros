@@ -28,4 +28,12 @@ public class Agente extends Usuario {
 		this.tipoAgente = tipoAgente;
 	}
 
+	public void update(Agente agente) {
+
+		this.cnpj = agente.cnpj;
+		this.setNome(agente.getNome());
+		this.setEmail(agente.getEmail());
+		this.setSenha(agente.getSenha());
+	}
+
 }
