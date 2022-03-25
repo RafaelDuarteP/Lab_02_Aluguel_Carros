@@ -1,21 +1,25 @@
 package com.example.demo.model.users;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Profissao {
 	@Id
-	private String nome;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String cargo;
 	private String empregador;
 	private double rendimentos;
 
-	public String getNome() {
-		return this.nome;
+	public String getCargo() {
+		return this.cargo;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setCargo(String nome) {
+		this.cargo = nome;
 	}
 
 	public String getEmpregador() {
@@ -32,6 +36,12 @@ public class Profissao {
 
 	public void setRendimentos(double rendimentos) {
 		this.rendimentos = rendimentos;
+	}
+
+	@Override
+	public String toString() {
+		return "Profissao [id=" + this.id + ", cargo=" + this.cargo + ", empregador=" + this.empregador
+				+ ", rendimentos=" + this.rendimentos + "]";
 	}
 
 }
