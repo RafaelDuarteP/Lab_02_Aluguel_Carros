@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Cliente</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="col-12 text-center " th:text="${c.nome}">Nome do cliente</h1>
+        </div>
+
+        <div class="row">
+            <div class="row">
+                <h3>Dados pessoais</h3>
+                <p class="col mt-2">Tipo: <span th:text="${c.getClass().getSimpleName()}">tipo</span> </p>
+                <p class="col mt-2">Email: <span th:text="${c.email}">email</span> </p>
+                <p class="col mt-2">Senha: <span th:text="${c.senha}">senha</span> </p>
+                <p class="col mt-2">RG: <span th:text="${c.rg}">rg</span> </p>
+                <p class="col mt-2">CPF: <span th:text="${c.cpf}">cpf</span> </p>
+                <h3>Endereço</h3>
+                <p class="col mt-2">Rua: <span th:text="${c.endereco.rua}">rua</span> </p>
+                <p class="col mt-2">Bairro: <span th:text="${c.endereco.bairro}">bairro</span> </p>
+                <p class="col mt-2">Numero: <span th:text="${c.endereco.numero}">numero</span> </p>
+                <p class="col mt-2">Cidade: <span th:text="${c.endereco.cidade}">cidade</span> </p>
+                <p class="col mt-2">Estado: <span th:text="${c.endereco.estado}">estado</span> </p>
+                <h3>Profissão</h3>
+                <p class="col mt-2">Cargo: <span th:text="${c.primeiraProfissao().cargo}">cargo</span> </p>
+                <p class="col mt-2">Empregador: <span th:text="${c.primeiraProfissao().empregador}">empregador</span> </p>
+                <p class="col mt-2">Rendimentos: R$ <span th:text="${c.primeiraProfissao().rendimentos}">rendimentos</span> </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <a href="/usuario" class="btn btn-primary col-6" >Voltar</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
