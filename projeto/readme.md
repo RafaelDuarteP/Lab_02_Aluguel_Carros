@@ -13,3 +13,19 @@ US-05: Como agente da empresa eu quero alterar pedidos de aluguel de veículos;
 US-06: Como agente da empresa eu quero avaliar pedidos de aluguel de veículos para adicionar meu parecer;
 
 US-07: Como agente financeiro eu quero conceder contratos de credito para usuarios poderem alugar veículos;
+
+# Diagrama de caso de uso
+
+![Diagrama de caso de uso](Diagrama_Caso_Uso.png)
+
+# Diagrama de classes
+
+![Diagrama de classes](Diagrama_Classes.png)
+
+# Diagrama de pacotes
+
+![Diagrama de pacotes](Diagrama_Pacotes.png)
+
+# Diagrama de componentes
+
+![Diagrama de componentes](Component%20Diagram0.png)
