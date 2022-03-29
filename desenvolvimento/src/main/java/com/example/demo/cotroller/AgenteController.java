@@ -78,6 +78,7 @@ public class AgenteController {
 			try {
 				Agente c = (Agente) user.get();
 				c.update(agente);
+				c.getEndereco().update(end);
 				usuarioDao.save(c);
 			} catch (ClassCastException e) {
 				mv = new ModelAndView("redirect:/usuario");

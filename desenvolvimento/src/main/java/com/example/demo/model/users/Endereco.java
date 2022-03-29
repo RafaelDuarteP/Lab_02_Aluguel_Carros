@@ -61,5 +61,13 @@ public class Endereco {
 		return "Endereco [id=" + this.id + ", rua=" + this.rua + ", bairro=" + this.bairro + ", numero=" + this.numero
 				+ ", cidade=" + this.cidade + ", estado=" + this.estado + "]";
 	}
+	
+	public void update(Endereco endereco) {
+		this.bairro = endereco.getBairro();
+		this.cidade = endereco.getCidade();
+		this.estado = endereco.getEstado();
+		this.numero = endereco.getNumero();
+		this.rua = endereco.getRua();
+	}
 
 }

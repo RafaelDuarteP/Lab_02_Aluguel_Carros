@@ -43,5 +43,11 @@ public class Profissao {
 		return "Profissao [id=" + this.id + ", cargo=" + this.cargo + ", empregador=" + this.empregador
 				+ ", rendimentos=" + this.rendimentos + "]";
 	}
+	
+	public void update(Profissao profissao) {
+		this.cargo = profissao.getCargo();
+		this.empregador = profissao.getEmpregador();
+		this.rendimentos = profissao.getRendimentos();
+	}
 
 }

@@ -80,10 +80,10 @@ public class ClienteController {
 		if (user.isPresent()) {
 			mv = new ModelAndView("redirect:/cliente/" + id);
 			try {
-				cliente.setEndereco(end);
-				cliente.addProfissao(p);
 				Cliente c = (Cliente) user.get();
 				c.update(cliente);
+				c.getEndereco().update(end);
+				c.primeiraProfissao().update(p);
 				usuarioDao.save(c);
 			} catch (ClassCastException e) {
 				mv = new ModelAndView("redirect:/usuario");
