@@ -70,6 +70,10 @@ public abstract class Usuario {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+	
+	public boolean validarLogin(String senha) {
+		return this.senha.equals(senha);
+	}
 
 	@Override
 	public String toString() {
