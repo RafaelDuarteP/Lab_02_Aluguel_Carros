@@ -2,16 +2,10 @@ package com.example.demo.model.legal;
 
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import com.example.demo.model.users.Cliente;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Aluguel {
@@ -19,11 +13,12 @@ public class Aluguel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private LocalDate data;
-	private LocalDate periodo;
+	@OneToOne(cascade = CascadeType.MERGE)
+	private Automovel automovel;
+	private String data;
+	private String periodo;
 	private double valor;
-	private boolean aprovado;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Cliente cliente;
 	@Enumerated(EnumType.STRING)
 	private Status status;
@@ -36,19 +31,19 @@ public class Aluguel {
 		this.id = id;
 	}
 
-	public LocalDate getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(LocalDate data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
-	public LocalDate getPeriodo() {
+	public String getPeriodo() {
 		return periodo;
 	}
 
-	public void setPeriodo(LocalDate periodo) {
+	public void setPeriodo(String periodo) {
 		this.periodo = periodo;
 	}
 
@@ -58,14 +53,6 @@ public class Aluguel {
 
 	public void setValor(double valor) {
 		this.valor = valor;
-	}
-
-	public boolean isAprovado() {
-		return aprovado;
-	}
-
-	public void setAprovado(boolean aprovado) {
-		this.aprovado = aprovado;
 	}
 
 	public Cliente getCliente() {
@@ -86,8 +73,7 @@ public class Aluguel {
 
 	@Override
 	public String toString() {
-		return "Aluguel [data=" + data + ", periodo=" + periodo + ", valor=" + valor + ", aprovado=" + aprovado
-				+ ", cliente=" + cliente + ", status=" + status + "]";
+		return "Aluguel [data=" + data + ", periodo=" + periodo + ", valor=" + valor + ", cliente=" + cliente + ", status=" + status + "]";
 	}
 
 	public void update(Aluguel aluguel) {
@@ -100,6 +86,14 @@ public class Aluguel {
 	}
 
 	public void aprovar() {
-		this.aprovado = true;
+		setStatus(Status.APROVADO);
+	}
+
+	public Automovel getAutomovel() {
+		return automovel;
+	}
+
+	public void setAutomovel(Automovel automovel) {
+		this.automovel = automovel;
 	}
 }
