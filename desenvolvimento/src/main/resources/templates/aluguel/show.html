@@ -1,0 +1,56 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <title>Pedidos de Aluguel</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <h1 class="col text-center" th:text="${u.nome}">Pedidos de Aluguel</h1>
+      </div>
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Data</th>
+          <th scope="col">Período</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="aluguel :  ${alugueis}">
+          <th scope="row" th:text="${aluguel.id}">id</th>
+          <td th:text="${aluguel.cliente.getNome()}">cliente</td>
+          <td th:text="${aluguel.data.toString()}">data</td>
+          <td th:text="${aluguel.periodo.toString()}">periodo</td>
+          <td th:text="${aluguel.valor}">valor</td>
+          <td th:text="${aluguel.status.toString()}">status</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+</body>
+</html>
