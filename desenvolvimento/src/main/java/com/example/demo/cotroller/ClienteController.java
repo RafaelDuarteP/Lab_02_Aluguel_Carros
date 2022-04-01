@@ -41,7 +41,6 @@ public class ClienteController {
 			mv = new ModelAndView("cliente/show");
 			try {
 				Cliente c = (Cliente) user;
-				System.out.println(c.primeiraProfissao().getCargo());
 				mv.addObject("c", c);
 			} catch (ClassCastException e) {
 				mv = new ModelAndView("redirect:/agente");

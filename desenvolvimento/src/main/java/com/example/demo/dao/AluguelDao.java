@@ -1,14 +1,12 @@
 package com.example.demo.dao;
 
-import com.example.demo.model.legal.Aluguel;
-import com.example.demo.model.users.Agente;
-import com.example.demo.model.users.Cliente;
-import com.example.demo.model.users.Usuario;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
+import com.example.demo.model.legal.Aluguel;
+import com.example.demo.model.users.Cliente;
 
 @Repository
 public interface AluguelDao extends JpaRepository<Aluguel, Long> {

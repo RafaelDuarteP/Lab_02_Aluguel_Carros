@@ -1,11 +1,16 @@
 package com.example.demo.model.legal;
 
-import java.time.LocalDate;
-
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import com.example.demo.model.users.Cliente;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Aluguel {

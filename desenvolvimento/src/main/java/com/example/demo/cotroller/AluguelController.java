@@ -63,7 +63,6 @@ public class AluguelController {
 
         aluguel.setCliente((Cliente) user);
         aluguel.setStatus(Status.EM_ANALISE);
-        System.out.println(automovelID);
         aluguel.setAutomovel(automovelDao.getById(automovelID));
 
         aluguelDao.save(aluguel);
