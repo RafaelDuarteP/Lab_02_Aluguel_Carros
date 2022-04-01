@@ -29,3 +29,7 @@ US-07: Como agente financeiro eu quero conceder contratos de credito para usuari
 # Diagrama de componentes
 
 ![Diagrama de componentes](Component%20Diagram0.png)
+
+# Diagrama de implantação
+
+![Diagrama de implantação](DiagramaDeImplantacao.png)
